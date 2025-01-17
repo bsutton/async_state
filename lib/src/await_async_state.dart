@@ -1,6 +1,7 @@
-import 'package:async_state/src/async_state.dart';
 import 'package:flutter/material.dart';
 import 'package:future_builder_ex/future_builder_ex.dart';
+
+import 'async_state.dart';
 
 /// Use [AwaitAsyncInit] in your builder to wait for the [AsyncState]
 /// to complete initialisation.
@@ -12,9 +13,9 @@ import 'package:future_builder_ex/future_builder_ex.dart';
 /// ```
 class AwaitAsyncInit extends StatelessWidget {
   const AwaitAsyncInit(this.state,
-      {this.waitingBuilder,
+      {required this.builder,
+      this.waitingBuilder,
       this.errorBuilder,
-      required this.builder,
       super.key});
 
   final AsyncState state;

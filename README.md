@@ -20,6 +20,30 @@ isn't called until the async initialisation is complete.
 A default [waitingBuilder] and [errorBuilder] are provided but you can roll your own.
 
 
+# Sponsored by OnePub
+Help support AwaitAsyncInit by supporting [OnePub](https://onepub.dev), the private dart repository.
+OnePub allows you to privately share dart packages between your own projects or with colleagues.
+Try it for free and publish your first private package in seconds.
+
+https://onepub.dev
+
+Publish a private package in six commands:
+```bash
+dart pub global activate onepub
+onepub login
+flutter create -t package mypackage
+cd mypackage
+onepub pub private
+dart pub publish
+```
+You can now add your private package to any app
+```bash
+onepub pub add mypackage
+```
+
+# Example
+The easist way to understand AsyncState is by an example.
+
 ```dart
 import 'package:async_state/async_state.dart';
 import 'package:flutter/material.dart';
@@ -63,8 +87,6 @@ class _SchedulPageState extends AsyncState<SchedulePage> {
     return AwaitAsyncInit(this, builder: (context) => Text(system.name));
   }
 }
-
-
 
 class System {
   System(this.name);

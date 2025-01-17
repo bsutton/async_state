@@ -6,8 +6,11 @@ import 'package:future_builder_ex/future_builder_ex.dart';
 /// error and waiting builders without having to
 /// specify them at every call site.
 class MyAwaitAsyncInit extends StatelessWidget {
-  MyAwaitAsyncInit(this.state,
-      {required this.builder, this.waitingBuilder, this.errorBuilder});
+  const MyAwaitAsyncInit(this.state,
+      {required this.builder,
+      super.key,
+      this.waitingBuilder,
+      this.errorBuilder});
   final AsyncState state;
   final WidgetBuilder builder;
 
@@ -17,8 +20,9 @@ class MyAwaitAsyncInit extends StatelessWidget {
   final WaitingBuilder? waitingBuilder;
   final ErrorBuilder? errorBuilder;
 
+  @override
   Widget build(BuildContext context) => AwaitAsyncInit(state,
-      waitingBuilder: (context) => Center(child: Text('waiting')),
+      waitingBuilder: (context) => const Center(child: Text('waiting')),
       errorBuilder: (context, error) => Center(child: Text(error.toString())),
-      builder: (context) => builder(context));
+      builder: builder);
 }
