@@ -1,0 +1,17 @@
+name: async_state
+description: Provides a simple method of doing async initialisation for a StatefulWidget
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+# Add regular dependencies here.
+dependencies:
+   flutter:
+    sdk: flutter
+   future_builder_ex: ^4.0.0
+
+dev_dependencies:
+  lint_hard: ^5.0.0
+  test: ^1.24.0
