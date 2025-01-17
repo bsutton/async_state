@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:future_builder_ex/future_builder_ex.dart';
 
-import 'async_state.dart';
+import 'deferred_state.dart';
 
-/// Use [AwaitAsyncInit] in your builder to wait for the [AsyncState]
-/// to complete initialisation.
+/// Use [DeferredBuilder] in your [State] build method to wait for
+/// the [DeferredState] to complete initialisation.
 /// ```dart
 /// Widget build(BuildContext context)
 /// {
-///   return AwaitAsyncInit(this, builder: (context) =>  ....)
+///   return DeferredBuilder(this, builder: (context) =>  ....)
 /// }
 /// ```
-class AwaitAsyncInit extends StatelessWidget {
-  const AwaitAsyncInit(this.state,
+class DeferredBuilder extends StatelessWidget {
+  const DeferredBuilder(this.state,
       {required this.builder,
       this.waitingBuilder,
       this.errorBuilder,
       super.key});
 
-  final AsyncState state;
+  final DeferredState state;
   final WaitingBuilder? waitingBuilder;
   final ErrorBuilder? errorBuilder;
   final WidgetBuilder builder;

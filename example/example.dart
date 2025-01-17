@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:async_state/async_state.dart';
+import 'package:deferred_state/deferred_state.dart';
 import 'package:flutter/material.dart';
 
 class SchedulePage extends StatefulWidget {
@@ -10,8 +10,8 @@ class SchedulePage extends StatefulWidget {
   State<StatefulWidget> createState() => _SchedulPageState();
 }
 
-/// Derrive from AsyncState rather than Sate
-class _SchedulPageState extends AsyncState<SchedulePage> {
+/// Derive from DeferredState rather than State
+class _SchedulPageState extends DeferredState<SchedulePage> {
   /// requires async initialisation
   late final System system;
 
@@ -43,10 +43,8 @@ class _SchedulPageState extends AsyncState<SchedulePage> {
   Widget build(BuildContext context) {
     /// Waits for [asyncInitState] to complete and then calls
     /// the builder.
-    return AwaitAsyncInit(this, builder: (context) => Text(system.name));
+    return DeferredBuilder(this, builder: (context) => Text(system.name));
   }
-
- 
 }
 
 class System {

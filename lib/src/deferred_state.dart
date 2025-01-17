@@ -2,18 +2,19 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../async_state.dart';
-import 'await_async_state.dart';
+import '../deferred_state.dart';
+import 'deferred_builder.dart';
 
 ///
-/// [AsyncState] makes it easy to do async initialisation of a [StatefulWidget]
+/// [DeferredState] makes it easy to do async initialisation
+/// of a [StatefulWidget]
 ///
 /// Instead of [StatefulWidget] deriving from [State] you derive
-/// from [AsyncState].
+/// from [DeferredState].
 ///
 /// You can then override the 'asyncInitState' method to do some
 /// asynchrounus initialisation.
-/// You then use [AwaitAsyncInit] to wait for the state
+/// You then use [DeferredBuilder] to wait for the state
 /// to be initialised.
 ///
 
@@ -24,7 +25,7 @@ import 'await_async_state.dart';
 ///
 /// ```dart
 ///
-/// class _WeekScheduleState extends AsyncState<WeekSchedule> {
+/// class _WeekScheduleState extends DeferredState<WeekSchedule> {
 ///
 /// late final System system;
 /// late final EventController<JobActivity> _weekController;
@@ -51,11 +52,11 @@ import 'await_async_state.dart';
 /// {
 ///   /// Waits for [asyncInitState] to complete and then calls
 ///   /// the builder.
-///   return AwaitAsyncInit(this, builder: (context) =>  Text(system.name));
+///   return DeferredBuilder(this, builder: (context) =>  Text(system.name));
 /// }
 /// ```
 ///
-abstract class AsyncState<T extends StatefulWidget> extends State<T> {
+abstract class DeferredState<T extends StatefulWidget> extends State<T> {
   final _initialised = Completer<void>();
 
   @override

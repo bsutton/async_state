@@ -1,17 +1,17 @@
-import 'package:async_state/async_state.dart';
+import 'package:deferred_state/deferred_state.dart';
 import 'package:flutter/material.dart';
 import 'package:future_builder_ex/future_builder_ex.dart';
 
-/// Create your on [AwaitAsyncInit] to customise the
+/// Create your on [DeferredBuilder] to customise the
 /// error and waiting builders without having to
 /// specify them at every call site.
-class MyAwaitAsyncInit extends StatelessWidget {
-  const MyAwaitAsyncInit(this.state,
+class MyDeferredBuilder extends StatelessWidget {
+  const MyDeferredBuilder(this.state,
       {required this.builder,
       super.key,
       this.waitingBuilder,
       this.errorBuilder});
-  final AsyncState state;
+  final DeferredState state;
   final WidgetBuilder builder;
 
   /// Include the waiting and error builders if you
@@ -21,7 +21,7 @@ class MyAwaitAsyncInit extends StatelessWidget {
   final ErrorBuilder? errorBuilder;
 
   @override
-  Widget build(BuildContext context) => AwaitAsyncInit(state,
+  Widget build(BuildContext context) => DeferredBuilder(state,
       waitingBuilder: (context) => const Center(child: Text('waiting')),
       errorBuilder: (context, error) => Center(child: Text(error.toString())),
       builder: builder);

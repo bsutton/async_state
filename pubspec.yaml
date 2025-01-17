@@ -1,7 +1,7 @@
-name: async_state
-description: Provides a simple method of doing async initialisation for a StatefulWidget
+name: deferred_state
+description: Provides a simple method of doing async initialisation in a StatefulWidget
 version: 1.0.0
-repository: https://github.com/onepub-dev/async_state
+repository: https://github.com/onepub-dev/deferred_state
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
