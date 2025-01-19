@@ -19,8 +19,9 @@ You then use [DeferredBuilder] in the State's [build] method so the builder
 isn't called until the async initialisation is complete. (DeferredBuilder wraps a 
 FutureBuilder under the hood).
 
+## Custom UI
 Whilst the UI is waiting or if an error occurs, DeferredBuilder provides a default 
-[waitingBuilder] and [errorBuilder] implementation but you can roll your own.
+[waitingBuilder] and [errorBuilder] implementation but you can roll your own (see below).
 
 
 # Sponsored by OnePub
