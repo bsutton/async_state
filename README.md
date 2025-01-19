@@ -8,7 +8,7 @@ initialisation in [initState], resulting in the need for convulated methods to i
 DeferredState provides a reliable and simple method of overcoming this
 problem by augmenting the [State] class with a [asyncInitState] method which 
 behaves in a simiar manner to [initState] but allows async calls when
-coupled with the [DefferedBuilder].
+coupled with the [DeferedBuilder].
 
 There are two classes in the async_state package [DeferredState] and [DeferredBuilder].  
 
